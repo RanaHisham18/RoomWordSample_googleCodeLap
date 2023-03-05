@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private val newWordActivityRequestCode = 1
     private val wordViewModel: viewModel by viewModels {
-        WordViewModelFactory((application as Application).repository)
+        WordViewModelFactory((application as Application).wordRepository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         // Add an observer on the LiveData returned by getAlphabetizedWords.
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
-        wordViewModel.allWords.observe(owner = this) { words ->
+        wordViewModel.allWords.observe(this) { words ->
             // Update the cached copy of the words in the adapter.
             words.let { adapter.submitList(it) }
         }
