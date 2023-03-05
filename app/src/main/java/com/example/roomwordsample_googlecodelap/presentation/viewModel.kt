@@ -2,6 +2,7 @@ package com.example.roomwordsample_googlecodelap.presentation
 
 import androidx.lifecycle.*
 import com.example.roomwordsample_googlecodelap.data.Word
+import com.example.roomwordsample_googlecodelap.repo.WordRepository
 import com.example.roomwordsample_googlecodelap.repo.wordRepository
 import kotlinx.coroutines.launch
 
