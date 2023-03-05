@@ -5,7 +5,7 @@ import com.example.roomwordsample_googlecodelap.data.Word
 import com.example.roomwordsample_googlecodelap.data.wordDao
 import kotlinx.coroutines.flow.Flow
 
-class WordRepository(private val wordDao: wordDao) {
+class wordRepository(private val wordDao: wordDao) {
 
     val allWords: Flow<List<Word>> = wordDao.getAlphabetizedWords()
 

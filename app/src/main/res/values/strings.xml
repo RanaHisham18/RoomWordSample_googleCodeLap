@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RoomWordSample_googleCodeLap</string>
+    <string name="add_word" />
 </resources>

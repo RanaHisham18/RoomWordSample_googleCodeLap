@@ -2,10 +2,10 @@ package com.example.roomwordsample_googlecodelap.presentation
 
 import androidx.lifecycle.*
 import com.example.roomwordsample_googlecodelap.data.Word
-import com.example.roomwordsample_googlecodelap.repo.WordRepository
+import com.example.roomwordsample_googlecodelap.repo.wordRepository
 import kotlinx.coroutines.launch
 
-class WordViewModel(private val repository: WordRepository) : ViewModel() {
+class viewModel(private val repository: wordRepository) : ViewModel() {
 
 
     val allWords: LiveData<List<Word>> = repository.allWords.asLiveData()
@@ -16,11 +16,11 @@ class WordViewModel(private val repository: WordRepository) : ViewModel() {
     }
 }
 
-class WordViewModelFactory(private val repository: WordRepository) : ViewModelProvider.Factory {
+class WordViewModelFactory(private val repository: wordRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(WordViewModel::class.java)) {
+        if (modelClass.isAssignableFrom(viewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return WordViewModel(repository) as T
+            return viewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
